@@ -2,69 +2,70 @@
 #include <cstddef>
 using namespace std;
 
-// Funções simples
-int soma(int number1, int number2){
+// Simple function definition
+int sum(int number1, int number2){
     return number1 + number2;
 }
 
-void primeiros_passos() {
+void first_steps() {
     // How to Inicialize variables
     int number1;
     int number2;
     
     // How to IOStream
     std::cout << "Hello world\n" << "\n";
-    cout << "Apresentando IOStream: " << endl;
-    std::cout << " digite o primeiro número: ";
+    cout << "Presenting IOStream: " << endl;
+    std::cout << " type the first number: ";
     std::cin >> number1;
-    std::cout << " digite o segundo numero: ";
+    std::cout << " type the second number: ";
     std::cin >> number2;
 
     // Mathematical operators
-    cout << "\nRealizando operações matemáticas... " << endl;
+    cout << "Presenting math operands" << endl;
+    cout << "\n  Making mathematic operations... " << endl;
     int sum = number1 + number2;
-    cout << " resultado da soma: " << sum << endl;
+    cout << "    sum result: " << sum << endl;
     int subtraction = number1 - number2;
-    cout << " resultado da subtração: " << subtraction << endl;
+    cout << "    subtraction result: " << subtraction << endl;
     int multiplication = number1 * number2;
-    cout << " resultado da multiplicação: " << multiplication << endl;
+    cout << "    multiplication result: " << multiplication << endl;
     if(number1 != 0 ) {
         int division = number1 / number2;
-        cout << " resultado da divisão: " << division << endl;
+        cout << "    division result: " << division << endl;
         float fdivision = (float) number1 / number2;
-        cout << " resultado da divisão de float: " << fdivision << endl;
+        cout << "    float division: " << fdivision << endl;
         int res = number1 % number2;
-        cout << " resultado  operação de resto : " << res << endl;
-    } else { cout << " operações de divisão não podem ter 0 no numerador." << endl; }
+        cout << "    rest operation result: " << res << endl;
+    } else { cout << "    numerator can't be zero in division operations." << endl; }
 
 
     // Conditional operators
-    cout << "\nCalculando operadores condicionais..." << endl;
+    cout << "\nCalculating conditional operations..." << endl;
     if(number1 == number2)
-        std::cout << "numero_1 == numero_2" << number2 << std::endl;
+        std::cout << "number_1 == number_2" << number2 << std::endl;
     if(number1 != number2)
-        std::cout << "numero_1 != numero_2" << number2 << std::endl;
+        std::cout << "number_1 != number_2" << number2 << std::endl;
     if(number1 < number2)
-        std::cout << "numero_1 < numero_2" << number2 << std::endl;
+        std::cout << "number_1 < number_2" << number2 << std::endl;
     if(number1 > number2)
-        std::cout << "numero_1 > numero_2" << number2 << std::endl;
+        std::cout << "number_1 > number_2" << number2 << std::endl;
 
     // Repetition
-    cout << "\nApresentando laços de repetição:" << endl;
+    cout << "\nPresenting repetitions loops:" << endl;
     int counter = 0;
     int amount = 0;
-    cout << "\n laço 'while'" << endl;
-    while(counter < 5) {
-        std::cout << "  Digite um número : (" << counter << ")";
+    cout << "  'while' loop" << endl;
+    while(counter < 3) {
+        std::cout << "    type a number: (" << counter << ")";
         std::cin >> number1;
         counter++;
     }
 
-    cout << "\n laço 'for'" << endl;
+    cout << "  'for' loop" << endl;
     int total = 0;
     for(int number = 1; number <= 20; number++) {
         total += number;
-        cout << "  total:" << total << endl;
+        cout << "    total:" << total << endl;
     }
 
 
@@ -74,165 +75,165 @@ void primeiros_passos() {
     sumAvarage = 0;
     count = 0;
 
-    cout << "\n laço 'do-while'" << endl;
-    cout << "  para encerrar, digite um valor menor que 0\n" << endl;
+    cout << "  'do-while' loop" << endl;
+    cout << "    to end up the loop, type a value lower than 0\n" << endl;
     do {
-        cout << "  insira um valor: ";
+        cout << "    type a value: ";
         cin >> valor;
         sumAvarage += valor;
         count++;
-        cout << "  contador:" << count << endl;
+        cout << "    count:" << count << endl;
     } while(valor >= 0);
 
     //How to type cast
-    cout << "\nFazendo type-casting e calculando média aritmética..." << endl;
+    cout << "\nType-casting calculating the aritmethic avarage..." << endl;
     float avarage = (float) sumAvarage / (float) count;
-    cout << " a média é: " << avarage << endl;
+    cout << "  the avarage is: " << avarage << endl;
 }
 
-//##############################################----- Ponteiros -----#####################################################################
+//##############################################----- Pointers -----#####################################################################
 
-//#######################--- Valor vs Referência ---#######################
-
-void troca_valores_passagem_por_valor(int val1, int val2) {
+//#######################--- Argument by value vs Argument by reference ---#######################
+//auxiliary reference_vs_value_switching function
+void switch_values_passing_argument_by_value(int val1, int val2) {
     int temp;
     temp = val1;
     val1 = val2;
     val2 = temp;
 }
 
-void troca_valores_passagem_por_referencia(int &val1, int &val2) {
+//auxiliary reference_vs_value_switching function
+void switch_values_passing_argument_by_reference(int &val1, int &val2) {
     int temp;
     temp = val1;
     val1 = val2;
     val2 = temp;
 }
 
-void passagem_por_valor_vs_referencia() {
-    cout << "\nPassagem vs referência" << endl;
+void reference_vs_value_switching() {
+    cout << "\nBy reference argument:" << endl;
     int val1 = 0;
-    cout << " valor da variavel 1: " << val1 << endl;
+    cout << "  variable 1 value: " << val1 << endl;
     int val2 = 2;
-    cout << " valor da variavel 2: " << val2 << endl;
-    cout << " valores trocados pass. por valor: ";
-    troca_valores_passagem_por_valor(val1, val2);
-    cout << "\n  val1: " << val1 << "\n  val2: " << val2 << endl;
-    cout << "  como podemos ver... Não funciona" << endl;
-    cout << " valores trocados pass. por referencia: ";
-    troca_valores_passagem_por_referencia(val1, val2);
-    cout << "\n  val1: " << val1 << "\n  val2: " << val2 << endl;
+    cout << "  variable 2 value: " << val2 << endl;
+    cout << "  switched values on by_value argument: ";
+    switch_values_passing_argument_by_value(val1, val2);
+    cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
+    cout << "  as we has been seen... It doesn't work." << endl;
+    cout << "  switched values on by_reference argument: ";
+    switch_values_passing_argument_by_reference(val1, val2);
+    cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
 }
 
-//#######################--- Inicialização de ponteiros ---#######################
-
+//#######################--- Pointer's initializing ---#######################
 /*
-    Nesta função o programa lança um erro, pois o valor 
-    do ponteiro é um valor de uma memória que não existe
-    (NULL) e, ao tentar acessar o valor de uma memória 
-    que não existe, é lançadoo o erro.
+    In this function it is throwed an error, because the 
+    the pointer has an address that doesn't exists (NULL),
+    and on C++, when it is tried to access non-existed
+    address value, an error is throwed.
 */
-void ponteiro_vazio() {
-    int *ponteiro = NULL;
-    cout << "Valor no espaço de memória contido no endereço do ponteiro: " << *ponteiro << endl;
+void empty_pointer() {
+    int *pointer = NULL;
+    cout << "Memory value in the address of the pointer: " << *pointer << endl;
 }
 
-void mostra_inicializacao_estatica() {
-    cout << "\nInicializando estaticamente um ponteiro" << endl;
+void display_static_allocation() {
+    cout << "\nStatic allocating a pointer..." << endl;
     int a = 1;
-    int *ponteiro = &a;
-    cout << " Valor do ponteiro inicializado: " << ponteiro << endl;
+    int *pointer = &a;
+    cout << "  Pointer value allocated: " << pointer << endl;
 }
 
-void mostra_inicializacao_dinamica() {
-    cout << "\nIniciando o ponteiro dinamicamente..." << endl;
-    int *ponteiro = new int;
-    cout << " Ponteiro iniciado. Valor contido nele: " << ponteiro << endl;
-    cout << " Colocando um valor na memória apontada..." << endl;
-    *ponteiro = 22;
-    cout << " Valor colocado na memória apontada: " << *ponteiro << endl;
-
-}
-
-//#######################--- Operação em ponteiros ---#######################
-void opera_nos_valores_contidos_na_memoria_dos_ponteiros() {
-    cout << "\nOperando em valores na memória de ponteiros..." << endl;
-    cout << "\n Inicializando dois ponteiros..." << endl;
-    int *ponteiro1 = new int;
-    *ponteiro1 = 22;
-    int *ponteiro2 = new int;
-    *ponteiro2 = 22;
-
-    cout << " Somando o valor da memória de ambos..." << endl;
-    int resultado = *ponteiro1 + *ponteiro2;
-    cout << " Resultado da soma: " << resultado << endl;
+void show_dynamic_inicialization() {
+    cout << "\nDynamic initalizing a pointer..." << endl;
+    int *pointer = new int;
+    cout << "  Initialized pointer. Value of the pointer: " << pointer << endl;
+    cout << "  Putting a value in the memory pointed by the pointer..." << endl;
+    *pointer = 22;
+    cout << "    value put in the memory pointed: " << *pointer << endl;
 
 }
 
+//#######################--- Operating on the pointer's memories ---#######################
+void operates_in_memories_pointed_by_pointers() {
+    cout << "\nOperating in pointers in-memory values..." << endl;
+    cout << "\n  initializing two pointers..." << endl;
+    int *pointer1 = new int;
+    *pointer1 = 22;
+    int *pointer2 = new int;
+    *pointer2 = 22;
 
-//#######################--- Exibindo valor de ponteiros ---#######################
-void exibe_valor_do_ponteiro() {
-    int *ponteiro = NULL;
+    cout << "  summing their in-memory values..." << endl;
+    int result = *pointer1 + *pointer2;
+    cout << "    sum result: " << result << endl;
+
+}
+
+
+//#######################--- Display pointers values ---#######################
+void display_pointers_value() {
+    int *pointer = NULL;
     int a = 1;
-    ponteiro = &a;
-    cout << "Valor do ponteiro: " << ponteiro << endl;
+    pointer = &a;
+    cout << "pointer value: " << pointer << endl;
 }
 
-void exibe_valor_da_memoria_apontada() {
-    int *ponteiro = NULL;
+void display_pointed_memory_value() {
+    int *pointer = NULL;
     int a = 1;
-    ponteiro = &a;
-    cout << "Valor do ponteiro: " << *ponteiro << endl;
+    pointer = &a;
+    cout << "Pointed memory value: " << *pointer << endl;
 }
 
-//#######################--- Vazamento de memória ---#######################
-void memoria_vazada_esta_limpa(float* memoria_vazada, float conteudo_antigo_da_memoria) {
-    cout << "      a memoria vazada foi limpa?" << endl;
-    if (*memoria_vazada != conteudo_antigo_da_memoria) {
-        cout << "        sim" << endl;
-    } else cout << "        não" << endl;
+//#######################--- Memory leak ---#######################
+void is_leaked_memory_clean(float* leaked_memory, float old_memory_content) {
+    cout << "      is the leaked memory clean?" << endl;
+    if (*leaked_memory != old_memory_content) {
+        cout << "        yes" << endl;
+    } else cout << "        no" << endl;
 }
 
-void simula_vazamento_de_memória() {
-    cout << "\nSimulando vazamento de memória" << endl;
-    cout << "  Criando float v1 com alocação dinâmica..." << endl;
+void simulates_memory_leak() {
+    cout << "\nSimulating memory leak" << endl;
+    cout << "  creating variable_1 with dynamic allocation..." << endl;
     float *v1 = new float;
-    cout << "    ponteiro v1 criado. Seu valor é: " << v1 << endl;
-    cout << "  Colocando um valor na memória apontada por v1..." << endl;
+    cout << "    pointer variable_1 created. Its value is: " << v1 << endl;
+    cout << "  putting a value in the memory pointed by variable_1..." << endl;
     *v1 = 33.6;
-    cout << "    valor alocado na memória. O valor na memória apontada por v1 é: " << *v1 << endl;
-    cout << "  Criando float v2 com alocação dinâmica" << endl;
+    cout << "    value put successfully. Memory value pointed by variable_1: " << *v1 << endl;
+    cout << "  creating variable_2 with dynamic allocation" << endl;
     float *v2 = new float;
-    cout << "    ponteiro v2 criado. Seu valor é: " << v2 << endl;
-    cout << "  Copiando o valor da memória de v1 na v2..." << endl;
+    cout << "     pointer variable_2 created. Its value is:: " << v2 << endl;
+    cout << "  copying memory value variable_1 into variable_2..." << endl;
     *v2 = *v1;
-    cout << "    valor copiado." << endl;
-    cout << "    o valor na memória apontada por v2 é: " << *v2 << endl;
-    cout << "    o valor do ponteiro v2 é: " << v2 << endl;
-    cout << "  Mudando o valor do ponteiro v2 para ele apontar para a mesma memória que v1..." << endl;
-    float* memoria_antiga = v2;
-    float conteudo_antigo_da_memoria = *v2;
+    cout << "    value copied successfully." << endl;
+    cout << "     value of the memory pointed by pointer variable_2 is: " << *v2 << endl;
+    cout << "     variable_2 pointer value is: " << v2 << endl;
+    cout << "  switching variable_2 value for it to point to the same memory from pointer variable_1..." << endl;
+    float* old_memory = v2;
+    float old_memory_content = *v2;
     v2 = v1;
-    cout << "    valor do ponteiro v2 mudado para apontar para a mesma memória de v1." << endl;
-    cout << "      valor do ponteiro v1: " << v1 << endl;
-    cout << "      valor do ponteiro v2" << v2 << endl;
-    cout << "      valor na memória v1: " << *v1 << endl;
-    cout << "      valor na memória v2: " << *v2 << endl;
-    cout << "  Ponteiro v1 aponta para a mesma memória que o ponteiro v2?" << endl;
+    cout << "    variable_2 pointer switched to point to the same variable_1 memory." << endl;
+    cout << "      pointer variable_1 value: " << v1 << endl;
+    cout << "      pointer variable_2 value" << v2 << endl;
+    cout << "      memory value pointed by variable_1: " << *v1 << endl;
+    cout << "      memory value pointed by variable_2: " << *v2 << endl;
+    cout << "  variable_1 pointer points to the same memory as variable_2?" << endl;
     if (v1 == v2) {
-        cout << "    sim" << endl;
-    } else { cout << "    não" << endl;}
-    cout << "  Houve vazamento de memória? " << endl;
-    if (*memoria_antiga == conteudo_antigo_da_memoria) {
-        cout << "    sim" << endl;
-    } else cout << "    não" << endl;
-    cout << "  Antes de limpar a memória vazada..." << endl;
-    memoria_vazada_esta_limpa(memoria_antiga, conteudo_antigo_da_memoria);
-    cout << "  Limpando memória vazada..." << endl;
-    delete memoria_antiga;
-    memoria_vazada_esta_limpa(memoria_antiga, conteudo_antigo_da_memoria);
+        cout << "    yes" << endl;
+    } else { cout << "    no" << endl;}
+    cout << "  there is a memory leak? " << endl;
+    if (*old_memory == old_memory_content) {
+        cout << "    yes" << endl;
+    } else cout << "    no" << endl;
+    cout << "  before cleaning the leaked memory..." << endl;
+    is_leaked_memory_clean(old_memory, old_memory_content);
+    cout << "  cleaning leaked memory..." << endl;
+    delete old_memory;
+    is_leaked_memory_clean(old_memory, old_memory_content);
 }
 
 int main() {
-    simula_vazamento_de_memória();
+    simulates_memory_leak();
     return 0;
 }
