@@ -94,6 +94,7 @@ void first_steps() {
 //##############################################----- Pointers -----#####################################################################
 
 //#######################--- Argument by value vs Argument by reference ---#######################
+//DON'T USE IT IN main()
 //auxiliary reference_vs_value_switching function
 void switch_values_passing_argument_by_value(int val1, int val2) {
     int temp;
@@ -102,6 +103,7 @@ void switch_values_passing_argument_by_value(int val1, int val2) {
     val2 = temp;
 }
 
+//DON'T USE IT IN main()
 //auxiliary reference_vs_value_switching function
 void switch_values_passing_argument_by_reference(int &val1, int &val2) {
     int temp;
@@ -186,6 +188,8 @@ void display_pointed_memory_value() {
 }
 
 //#######################--- Memory leak ---#######################
+//DON'T USE IT IN main()
+//auxiliary method for simulates_memory_lead
 void is_leaked_memory_clean(float* leaked_memory, float old_memory_content) {
     cout << "      is the leaked memory clean?" << endl;
     if (*leaked_memory != old_memory_content) {
@@ -234,6 +238,15 @@ void simulates_memory_leak() {
 }
 
 int main() {
+    //empty_pointer(); it intentionally throws an error
+    first_steps();
+    display_static_allocation();
+    show_dynamic_inicialization();
+    operates_in_memories_pointed_by_pointers();
+    display_pointers_value();
+    display_pointed_memory_value();
+    simulates_memory_leak();
+    reference_vs_value_switching();
     simulates_memory_leak();
     return 0;
 }
