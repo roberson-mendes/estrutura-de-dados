@@ -184,11 +184,55 @@ void exibe_valor_da_memoria_apontada() {
     cout << "Valor do ponteiro: " << *ponteiro << endl;
 }
 
+//#######################--- Vazamento de memória ---#######################
+void memoria_vazada_esta_limpa(float* memoria_vazada, float conteudo_antigo_da_memoria) {
+    cout << "      a memoria vazada foi limpa?" << endl;
+    if (*memoria_vazada != conteudo_antigo_da_memoria) {
+        cout << "        sim" << endl;
+    } else cout << "        não" << endl;
+}
+
+void simula_vazamento_de_memória() {
+    cout << "\nSimulando vazamento de memória" << endl;
+    cout << "  Criando float v1 com alocação dinâmica..." << endl;
+    float *v1 = new float;
+    cout << "    ponteiro v1 criado. Seu valor é: " << v1 << endl;
+    cout << "  Colocando um valor na memória apontada por v1..." << endl;
+    *v1 = 33.6;
+    cout << "    valor alocado na memória. O valor na memória apontada por v1 é: " << *v1 << endl;
+    cout << "  Criando float v2 com alocação dinâmica" << endl;
+    float *v2 = new float;
+    cout << "    ponteiro v2 criado. Seu valor é: " << v2 << endl;
+    cout << "  Copiando o valor da memória de v1 na v2..." << endl;
+    *v2 = *v1;
+    cout << "    valor copiado." << endl;
+    cout << "    o valor na memória apontada por v2 é: " << *v2 << endl;
+    cout << "    o valor do ponteiro v2 é: " << v2 << endl;
+    cout << "  Mudando o valor do ponteiro v2 para ele apontar para a mesma memória que v1..." << endl;
+    float* memoria_antiga = v2;
+    float conteudo_antigo_da_memoria = *v2;
+    v2 = v1;
+    cout << "    valor do ponteiro v2 mudado para apontar para a mesma memória de v1." << endl;
+    cout << "      valor do ponteiro v1: " << v1 << endl;
+    cout << "      valor do ponteiro v2" << v2 << endl;
+    cout << "      valor na memória v1: " << *v1 << endl;
+    cout << "      valor na memória v2: " << *v2 << endl;
+    cout << "  Ponteiro v1 aponta para a mesma memória que o ponteiro v2?" << endl;
+    if (v1 == v2) {
+        cout << "    sim" << endl;
+    } else { cout << "    não" << endl;}
+    cout << "  Houve vazamento de memória? " << endl;
+    if (*memoria_antiga == conteudo_antigo_da_memoria) {
+        cout << "    sim" << endl;
+    } else cout << "    não" << endl;
+    cout << "  Antes de limpar a memória vazada..." << endl;
+    memoria_vazada_esta_limpa(memoria_antiga, conteudo_antigo_da_memoria);
+    cout << "  Limpando memória vazada..." << endl;
+    delete memoria_antiga;
+    memoria_vazada_esta_limpa(memoria_antiga, conteudo_antigo_da_memoria);
+}
+
 int main() {
-    primeiros_passos();
-    mostra_inicializacao_estatica();
-    mostra_inicializacao_dinamica();
-    opera_nos_valores_contidos_na_memoria_dos_ponteiros();
-    passagem_por_valor_vs_referencia();
+    simula_vazamento_de_memória();
     return 0;
 }
