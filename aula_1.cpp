@@ -110,19 +110,65 @@ void switch_values_passing_argument_by_reference(int &val1, int &val2) {
     val2 = temp;
 }
 
+//auxiliary reference_vs_value_switching function
+void switch_pointer_by_reference(int*& pointer) {
+    cout << "    Executing function switch_pointer_by_reference..." << endl;
+    cout << "      pointer's value received: " << pointer << endl;
+    cout << "      changing the addres of the pointer..." << endl;
+    pointer = new int[3];
+    cout << "      pointer's address changed! The new value inside the function is: " << pointer << endl;
+    cout << "    End of switch_pointer_by_reference function" << endl;
+}
+
+//auxiliary reference_vs_value_switching function
+void switch_pointer_by_value(int* pointer) {
+    cout << "    Executing function switch_pointer_by_value..." << endl;
+    cout << "      pointer's value received: " << pointer << endl;
+    cout << "      changing the addres of the pointer..." << endl;
+    pointer = new int[3];
+    cout << "      pointer's address changed! The new value inside the function is: " << pointer << endl;
+    cout << "    End of switch_pointer_by_value function" << endl;
+}
+
 void reference_vs_value_switching() {
-    cout << "\nBy reference argument:" << endl;
+    cout << "\nBy reference vs by value arguments:" << endl;
+    
     int val1 = 0;
     cout << "  variable 1 value: " << val1 << endl;
+
     int val2 = 2;
     cout << "  variable 2 value: " << val2 << endl;
-    cout << "  switched values on by_value argument: ";
+
+    cout << "  switching values on by_value argument... ";
     switch_values_passing_argument_by_value(val1, val2);
     cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
-    cout << "  as we has been seen... It doesn't work." << endl;
-    cout << "  switched values on by_reference argument: ";
+
+    cout << "  as we have been seen... It doesn't work." << endl;
+
+    cout << "  switching values on by_reference argument: " << endl;
     switch_values_passing_argument_by_reference(val1, val2);
-    cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
+    cout << "    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
+    cout << "  and now, the switching on the values worked well, because it is by reference." << endl;
+
+    cout << "But and if we want to change a pointer's value?" << endl;
+    cout << "Once the pointer is a variable itself, if you want to modify the pointer's value, you need ";
+    cout << "to pass the address of the pointer, like in the exemple bellow:" << endl;
+    
+    cout << "  creating a pointer..." << endl;
+    int* pointer = &val1;
+    cout << "  pointer 'pointer' created. It's value is: " << pointer << endl;
+    
+    cout << "  passing the pointer by-reference to a function that modifies it..." << endl;
+    switch_pointer_by_reference(pointer);
+    cout << "  the new value of the pointer is: " << pointer << endl;
+
+    cout << "And if we pass it by-value to modify the value of the pointer, as we know, it doesn't work: " << endl;
+
+    cout << "  pointer 'pointer' value is: " << pointer << endl;
+    
+    cout << "  passing the pointer by-value to a function that modifies it..." << endl;
+    switch_pointer_by_value(pointer);
+    cout << "  the new value of the pointer is: " << pointer << endl;
 }
 
 //#######################--- Pointer's initializing ---#######################
@@ -154,7 +200,7 @@ void show_dynamic_inicialization() {
 
 }
 
-//#######################--- Operating on the pointer's memories ---#######################
+//#######################--- Arithmatic operations on the pointer's memories ---#######################
 void operates_in_memories_pointed_by_pointers() {
     cout << "\nOperating in pointers in-memory values..." << endl;
     cout << "\n  initializing two pointers..." << endl;
