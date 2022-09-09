@@ -19,3 +19,9 @@ g++ *.cpp -o  -std=c++17 ../../bin/class_1 | ../../bin/class_1
 
 # Code conventions
 All code conventions of this repository is based on the [Gromacs manual](https://manual.gromacs.org/5.1.1/dev-manual/naming.html) and on the [GeeksForGeeks article](https://www.geeksforgeeks.org/naming-convention-in-c/).
+
+# Testing
+We use [doctest](https://github.com/doctest/doctest/blob/master/doc/markdown/testcases.md) to make the tests.
+All test classes are put in \test repository.
+
+- To compile tests there is used -std=c++17 flag.

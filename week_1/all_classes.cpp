@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstddef>
-using namespace std;
 
 // Simple function definition
 int sum(int number1, int number2){
@@ -14,58 +13,58 @@ void first_steps() {
     
     // How to IOStream
     std::cout << "Hello world\n" << "\n";
-    cout << "Presenting IOStream: " << endl;
+    std::cout << "Presenting IOStream: \n";
     std::cout << " type the first number: ";
     std::cin >> number1;
     std::cout << " type the second number: ";
     std::cin >> number2;
 
     // Mathematical operators
-    cout << "Presenting math operands" << endl;
-    cout << "\n  Making mathematic operations... " << endl;
+    std::cout << "Presenting math operands\n";
+    std::cout << "\n  Making mathematic operations... \n";
     int sum = number1 + number2;
-    cout << "    sum result: " << sum << endl;
+    std::cout << "    sum result: " << sum << "\n";
     int subtraction = number1 - number2;
-    cout << "    subtraction result: " << subtraction << endl;
+    std::cout << "    subtraction result: " << subtraction << "\n";
     int multiplication = number1 * number2;
-    cout << "    multiplication result: " << multiplication << endl;
+    std::cout << "    multiplication result: " << multiplication << "\n";
     if(number1 != 0 ) {
         int division = number1 / number2;
-        cout << "    division result: " << division << endl;
+        std::cout << "    division result: " << division << "\n";
         float fdivision = (float) number1 / number2;
-        cout << "    float division: " << fdivision << endl;
+        std::cout << "    float division: " << fdivision << "\n";
         int res = number1 % number2;
-        cout << "    rest operation result: " << res << endl;
-    } else { cout << "    numerator can't be zero in division operations." << endl; }
+        std::cout << "    rest operation result: " << res << "\n";
+    } else { std::cout << "    numerator can't be zero in division operations.\n"; }
 
 
     // Conditional operators
-    cout << "\nCalculating conditional operations..." << endl;
+    std::cout << "\nCalculating conditional operations...\n";
     if(number1 == number2)
-        std::cout << "number_1 == number_2" << number2 << std::endl;
+        std::cout << "number_1 == number_2" << number2 << "\n";
     if(number1 != number2)
-        std::cout << "number_1 != number_2" << number2 << std::endl;
+        std::cout << "number_1 != number_2" << number2 << "\n";
     if(number1 < number2)
-        std::cout << "number_1 < number_2" << number2 << std::endl;
+        std::cout << "number_1 < number_2" << number2 << "\n";
     if(number1 > number2)
-        std::cout << "number_1 > number_2" << number2 << std::endl;
+        std::cout << "number_1 > number_2" << number2 << "\n";
 
     // Repetition
-    cout << "\nPresenting repetitions loops:" << endl;
+    std::cout << "\nPresenting repetitions loops:\n";
     int counter = 0;
     int amount = 0;
-    cout << "  'while' loop" << endl;
+    std::cout << "  'while' loop\n";
     while(counter < 3) {
         std::cout << "    type a number: (" << counter << ")";
         std::cin >> number1;
         counter++;
     }
 
-    cout << "  'for' loop" << endl;
+    std::cout << "  'for' loop\n";
     int total = 0;
     for(int number = 1; number <= 20; number++) {
         total += number;
-        cout << "    total:" << total << endl;
+        std::cout << "    total:" << total << "\n";
     }
 
 
@@ -75,20 +74,20 @@ void first_steps() {
     sumAvarage = 0;
     count = 0;
 
-    cout << "  'do-while' loop" << endl;
-    cout << "    to end up the loop, type a value lower than 0\n" << endl;
+    std::cout << "  'do-while' loop\n";
+    std::cout << "    to end up the loop, type a value lower than 0\n\n";
     do {
-        cout << "    type a value: ";
-        cin >> valor;
+        std::cout << "    type a value: ";
+        std::cin >> valor;
         sumAvarage += valor;
         count++;
-        cout << "    count:" << count << endl;
+        std::cout << "    count:" << count << "\n";
     } while(valor >= 0);
 
     //How to type cast
-    cout << "\nType-casting calculating the aritmethic avarage..." << endl;
+    std::cout << "\nType-casting calculating the aritmethic avarage...\n";
     float avarage = (float) sumAvarage / (float) count;
-    cout << "  the avarage is: " << avarage << endl;
+    std::cout << "  the avarage is: " << avarage << "\n";
 }
 
 //##############################################----- Pointers -----#####################################################################
@@ -112,63 +111,63 @@ void switch_values_passing_argument_by_reference(int &val1, int &val2) {
 
 //auxiliary reference_vs_value_switching function
 void switch_pointer_by_reference(int*& pointer) {
-    cout << "    Executing function switch_pointer_by_reference..." << endl;
-    cout << "      pointer's value received: " << pointer << endl;
-    cout << "      changing the addres of the pointer..." << endl;
+    std::cout << "    Executing function switch_pointer_by_reference...\n";
+    std::cout << "      pointer's value received: " << pointer << "\n";
+    std::cout << "      changing the addres of the pointer...\n";
     pointer = new int[3];
-    cout << "      pointer's address changed! The new value inside the function is: " << pointer << endl;
-    cout << "    End of switch_pointer_by_reference function" << endl;
+    std::cout << "      pointer's address changed! The new value inside the function is: " << pointer << "\n";
+    std::cout << "    End of switch_pointer_by_reference function\n";
 }
 
 //auxiliary reference_vs_value_switching function
 void switch_pointer_by_value(int* pointer) {
-    cout << "    Executing function switch_pointer_by_value..." << endl;
-    cout << "      pointer's value received: " << pointer << endl;
-    cout << "      changing the addres of the pointer..." << endl;
+    std::cout << "    Executing function switch_pointer_by_value...\n";
+    std::cout << "      pointer's value received: " << pointer << "\n";
+    std::cout << "      changing the addres of the pointer...\n";
     pointer = new int[3];
-    cout << "      pointer's address changed! The new value inside the function is: " << pointer << endl;
-    cout << "    End of switch_pointer_by_value function" << endl;
+    std::cout << "      pointer's address changed! The new value inside the function is: " << pointer << "\n";
+    std::cout << "    End of switch_pointer_by_value function\n";
 }
 
 void reference_vs_value_switching() {
-    cout << "\nBy reference vs by value arguments:" << endl;
+    std::cout << "\nBy reference vs by value arguments:\n";
     
     int val1 = 0;
-    cout << "  variable 1 value: " << val1 << endl;
+    std::cout << "  variable 1 value: " << val1 << "\n";
 
     int val2 = 2;
-    cout << "  variable 2 value: " << val2 << endl;
+    std::cout << "  variable 2 value: " << val2 << "\n";
 
-    cout << "  switching values on by_value argument... ";
+    std::cout << "  switching values on by_value argument... ";
     switch_values_passing_argument_by_value(val1, val2);
-    cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
+    std::cout << "\n    variable_1: " << val1 << "\n    variable_2: " << val2 << "\n";
 
-    cout << "  as we have been seen... It doesn't work." << endl;
+    std::cout << "  as we have been seen... It doesn't work.\n";
 
-    cout << "  switching values on by_reference argument: " << endl;
+    std::cout << "  switching values on by_reference argument: \n";
     switch_values_passing_argument_by_reference(val1, val2);
-    cout << "    variable_1: " << val1 << "\n    variable_2: " << val2 << endl;
-    cout << "  and now, the switching on the values worked well, because it is by reference." << endl;
+    std::cout << "    variable_1: " << val1 << "\n    variable_2: " << val2 << "\n";
+    std::cout << "  and now, the switching on the values worked well, because it is by reference.\n";
 
-    cout << "But and if we want to change a pointer's value?" << endl;
-    cout << "Once the pointer is a variable itself, if you want to modify the pointer's value, you need ";
-    cout << "to pass the address of the pointer, like in the exemple bellow:" << endl;
+    std::cout << "But and if we want to change a pointer's value?\n";
+    std::cout << "Once the pointer is a variable itself, if you want to modify the pointer's value, you need ";
+    std::cout << "to pass the address of the pointer, like in the exemple bellow:\n";
     
-    cout << "  creating a pointer..." << endl;
+    std::cout << "  creating a pointer...\n";
     int* pointer = &val1;
-    cout << "  pointer 'pointer' created. It's value is: " << pointer << endl;
+    std::cout << "  pointer 'pointer' created. It's value is: " << pointer << "\n";
     
-    cout << "  passing the pointer by-reference to a function that modifies it..." << endl;
+    std::cout << "  passing the pointer by-reference to a function that modifies it...\n";
     switch_pointer_by_reference(pointer);
-    cout << "  the new value of the pointer is: " << pointer << endl;
+    std::cout << "  the new value of the pointer is: " << pointer << "\n";
 
-    cout << "And if we pass it by-value to modify the value of the pointer, as we know, it doesn't work: " << endl;
+    std::cout << "And if we pass it by-value to modify the value of the pointer, as we know, it doesn't work: \n";
 
-    cout << "  pointer 'pointer' value is: " << pointer << endl;
+    std::cout << "  pointer 'pointer' value is: " << pointer << "\n";
     
-    cout << "  passing the pointer by-value to a function that modifies it..." << endl;
+    std::cout << "  passing the pointer by-value to a function that modifies it...\n";
     switch_pointer_by_value(pointer);
-    cout << "  the new value of the pointer is: " << pointer << endl;
+    std::cout << "  the new value of the pointer is: " << pointer << "\n";
 }
 
 //#######################--- Pointer's initializing ---#######################
@@ -180,38 +179,38 @@ void reference_vs_value_switching() {
 */
 void empty_pointer() {
     int *pointer = NULL;
-    cout << "Memory value in the address of the pointer: " << *pointer << endl;
+    std::cout << "Memory value in the address of the pointer: " << *pointer << "\n";
 }
 
 void display_static_allocation() {
-    cout << "\nStatic allocating a pointer..." << endl;
+    std::cout << "\nStatic allocating a pointer...\n";
     int a = 1;
     int *pointer = &a;
-    cout << "  Pointer value allocated: " << pointer << endl;
+    std::cout << "  Pointer value allocated: " << pointer << "\n";
 }
 
 void show_dynamic_inicialization() {
-    cout << "\nDynamic initalizing a pointer..." << endl;
+    std::cout << "\nDynamic initalizing a pointer...\n";
     int *pointer = new int;
-    cout << "  Initialized pointer. Value of the pointer: " << pointer << endl;
-    cout << "  Putting a value in the memory pointed by the pointer..." << endl;
+    std::cout << "  Initialized pointer. Value of the pointer: " << pointer << "\n";
+    std::cout << "  Putting a value in the memory pointed by the pointer...\n";
     *pointer = 22;
-    cout << "    value put in the memory pointed: " << *pointer << endl;
+    std::cout << "    value put in the memory pointed: " << *pointer << "\n";
 
 }
 
 //#######################--- Arithmatic operations on the pointer's memories ---#######################
 void operates_in_memories_pointed_by_pointers() {
-    cout << "\nOperating in pointers in-memory values..." << endl;
-    cout << "\n  initializing two pointers..." << endl;
+    std::cout << "\nOperating in pointers in-memory values...\n";
+    std::cout << "\n  initializing two pointers...\n";
     int *pointer1 = new int;
     *pointer1 = 22;
     int *pointer2 = new int;
     *pointer2 = 22;
 
-    cout << "  summing their in-memory values..." << endl;
+    std::cout << "  summing their in-memory values...\n";
     int result = *pointer1 + *pointer2;
-    cout << "    sum result: " << result << endl;
+    std::cout << "    sum result: " << result << "\n";
 
 }
 
@@ -221,61 +220,61 @@ void display_pointers_value() {
     int *pointer = NULL;
     int a = 1;
     pointer = &a;
-    cout << "pointer value: " << pointer << endl;
+    std::cout << "pointer value: " << pointer << "\n";
 }
 
 void display_pointed_memory_value() {
     int *pointer = NULL;
     int a = 1;
     pointer = &a;
-    cout << "Pointed memory value: " << *pointer << endl;
+    std::cout << "Pointed memory value: " << *pointer << "\n";
 }
 
 //#######################--- Memory leak ---#######################
 //auxiliary method for simulates_memory_lead
 void is_leaked_memory_clean(float* leaked_memory, float old_memory_content) {
-    cout << "      is the leaked memory clean?" << endl;
+    std::cout << "      is the leaked memory clean?\n";
     if (*leaked_memory != old_memory_content) {
-        cout << "        yes" << endl;
-    } else cout << "        no" << endl;
+        std::cout << "        yes\n";
+    } else std::cout << "        no\n";
 }
 
 void simulates_memory_leak() {
-    cout << "\nSimulating memory leak" << endl;
-    cout << "  creating variable_1 with dynamic allocation..." << endl;
+    std::cout << "\nSimulating memory leak\n";
+    std::cout << "  creating variable_1 with dynamic allocation...\n";
     float *v1 = new float;
-    cout << "    pointer variable_1 created. Its value is: " << v1 << endl;
-    cout << "  putting a value in the memory pointed by variable_1..." << endl;
+    std::cout << "    pointer variable_1 created. Its value is: " << v1 << "\n";
+    std::cout << "  putting a value in the memory pointed by variable_1...\n";
     *v1 = 33.6;
-    cout << "    value put successfully. Memory value pointed by variable_1: " << *v1 << endl;
-    cout << "  creating variable_2 with dynamic allocation" << endl;
+    std::cout << "    value put successfully. Memory value pointed by variable_1: " << *v1 << "\n";
+    std::cout << "  creating variable_2 with dynamic allocation\n";
     float *v2 = new float;
-    cout << "     pointer variable_2 created. Its value is:: " << v2 << endl;
-    cout << "  copying memory value variable_1 into variable_2..." << endl;
+    std::cout << "     pointer variable_2 created. Its value is:: " << v2 << "\n";
+    std::cout << "  copying memory value variable_1 into variable_2...\n";
     *v2 = *v1;
-    cout << "    value copied successfully." << endl;
-    cout << "     value of the memory pointed by pointer variable_2 is: " << *v2 << endl;
-    cout << "     variable_2 pointer value is: " << v2 << endl;
-    cout << "  switching variable_2 value for it to point to the same memory from pointer variable_1..." << endl;
+    std::cout << "    value copied successfully.\n";
+    std::cout << "     value of the memory pointed by pointer variable_2 is: " << *v2 << "\n";
+    std::cout << "     variable_2 pointer value is: " << v2 << "\n";
+    std::cout << "  switching variable_2 value for it to point to the same memory from pointer variable_1...\n";
     float* old_memory = v2;
     float old_memory_content = *v2;
     v2 = v1;
-    cout << "    variable_2 pointer switched to point to the same variable_1 memory." << endl;
-    cout << "      pointer variable_1 value: " << v1 << endl;
-    cout << "      pointer variable_2 value" << v2 << endl;
-    cout << "      memory value pointed by variable_1: " << *v1 << endl;
-    cout << "      memory value pointed by variable_2: " << *v2 << endl;
-    cout << "  variable_1 pointer points to the same memory as variable_2?" << endl;
+    std::cout << "    variable_2 pointer switched to point to the same variable_1 memory.\n";
+    std::cout << "      pointer variable_1 value: " << v1 << "\n";
+    std::cout << "      pointer variable_2 value" << v2 << "\n";
+    std::cout << "      memory value pointed by variable_1: " << *v1 << "\n";
+    std::cout << "      memory value pointed by variable_2: " << *v2 << "\n";
+    std::cout << "  variable_1 pointer points to the same memory as variable_2?\n";
     if (v1 == v2) {
-        cout << "    yes" << endl;
-    } else { cout << "    no" << endl;}
-    cout << "  there is a memory leak? " << endl;
+        std::cout << "    yes\n";
+    } else { std::cout << "    no\n";}
+    std::cout << "  there is a memory leak? \n";
     if (*old_memory == old_memory_content) {
-        cout << "    yes" << endl;
-    } else cout << "    no" << endl;
-    cout << "  before cleaning the leaked memory..." << endl;
+        std::cout << "    yes\n";
+    } else std::cout << "    no\n";
+    std::cout << "  before cleaning the leaked memory...\n";
     is_leaked_memory_clean(old_memory, old_memory_content);
-    cout << "  cleaning leaked memory..." << endl;
+    std::cout << "  cleaning leaked memory...\n";
     delete old_memory;
     is_leaked_memory_clean(old_memory, old_memory_content);
 }
@@ -288,40 +287,40 @@ void simulates_memory_leak() {
 
 void calculates_an_array_size() {
     int int_array[5] = {2};
-    cout << "\nUsing sizeof operator at an int type: " << sizeof(int) << endl;
-    cout << "Using sizeof operator at an empty array of 5 int elements: " << sizeof(int_array) << endl;
-    cout << "  As we can see... The size of an array is the multiple of the size of the alocated type " << endl;
-    cout << "  times the spaces reserved on the array." << endl;
-    cout << "  So if we want to know how much indexes an array of int has, we should" << endl;
-    cout << "  divide the size of that array by the size of the type allocated in it. For example:" << endl;
-    cout << "  Calculating how much indexes has the int array..." << endl;
+    std::cout << "\nUsing sizeof operator at an int type: " << sizeof(int) << "\n";
+    std::cout << "Using sizeof operator at an empty array of 5 int elements: " << sizeof(int_array) << "\n";
+    std::cout << "  As we can see... The size of an array is the multiple of the size of the alocated type \n";
+    std::cout << "  times the spaces reserved on the array.\n";
+    std::cout << "  So if we want to know how much indexes an array of int has, we should\n";
+    std::cout << "  divide the size of that array by the size of the type allocated in it. For example:\n";
+    std::cout << "  Calculating how much indexes has the int array...\n";
     int array_size = sizeof(int_array) / sizeof(int_array[0]);
-    cout << "    size of the given array calculated. Size: " << array_size << endl; 
+    std::cout << "    size of the given array calculated. Size: " << array_size << "\n"; 
 }
 
 void initialize_arrays_in_different_ways(int optional_size = 3) {
     int size = 2;
-    cout << "\nInitializing arrays in different ways" << endl;
-    cout << "  STATIC initializing with size definied by the" << endl;
-    cout << "  elements already allocated in initializing time..." << endl;
+    std::cout << "\nInitializing arrays in different ways\n";
+    std::cout << "  STATIC initializing with size definied by the\n";
+    std::cout << "  elements already allocated in initializing time...\n";
     int int_array[] = {1, 2, 3};
-    cout << "    int array initialized: " << endl;
+    std::cout << "    int array initialized: \n";
     for(int i = 0; i < sizeof(int_array) / sizeof(int_array[0]); i++)
-        cout << "      element " << i << " = " << int_array[i];
-    cout << endl;
-    cout << "  STATIC initializing with size defined with a constant value" << endl;
+        std::cout << "      element " << i << " = " << int_array[i];
+    std::cout << "\n";
+    std::cout << "  STATIC initializing with size defined with a constant value\n";
     char char_array[size];
-    cout << "    char array initialized: " << endl;
+    std::cout << "    char array initialized: \n";
     for(int i = 0; i < sizeof(char_array) / sizeof(char_array[0]); i++)
-        cout << "      element " << i << " = " << char_array[i];
-    cout << endl;
-    cout << "  DYNAMIC initializing with size definied at runtime moment..." << endl;
+        std::cout << "      element " << i << " = " << char_array[i];
+    std::cout << "\n";
+    std::cout << "  DYNAMIC initializing with size definied at runtime moment...\n";
     float* float_array = new float[optional_size];
-    cout << "    allocating an element for each index... " << endl;
-    cout << "    float array initialized" << endl;
-    cout << "  Once the array was dynamicly allocated it should be DEALLOCATED. Deallocating array..." << endl;
+    std::cout << "    allocating an element for each index... \n";
+    std::cout << "    float array initialized\n";
+    std::cout << "  Once the array was dynamicly allocated it should be DEALLOCATED. Deallocating array...\n";
     delete[] float_array;
-    cout << "    Array deallocated" << endl;
+    std::cout << "    Array deallocated\n";
 }
 
 // auxiliary for arrays_and_pointers() function
@@ -330,70 +329,70 @@ void modify_first_element(int array[]) {
 }
 
 void arrays_and_pointers() {
-    cout << "Arrays are pointers. So, when an array is passed through a function, " << endl;
-    cout << "it is passed a pointer containing the address of the first element in an array" << endl;
-    cout << "\nBecause of it, we can iterate through its elements by the address:" << endl;
+    std::cout << "Arrays are pointers. So, when an array is passed through a function, \n";
+    std::cout << "it is passed a pointer containing the address of the first element in an array\n";
+    std::cout << "\nBecause of it, we can iterate through its elements by the address:\n";
 
     int array[] = {1, 2};
 
-    cout << "  getting the first element with pointer notation... " << endl;
-    cout << "    first element: "<< *array << endl;
-    cout << "  getting the second element with by the address of first... " << endl;
+    std::cout << "  getting the first element with pointer notation... \n";
+    std::cout << "    first element: "<< *array << "\n";
+    std::cout << "  getting the second element with by the address of first... \n";
 
     int* first_element = &array[0];
     int* second_element = first_element + 1;
 
-    cout << "    second element: " << *second_element << endl;
-    cout << "\nAnd we should take care in passing arrays through functions:" << endl;
-    cout << "  first element from original array: " << array[0] << endl;
-    cout << "  passing by value an array to a function that modifies it... " << endl;
+    std::cout << "    second element: " << *second_element << "\n";
+    std::cout << "\nAnd we should take care in passing arrays through functions:\n";
+    std::cout << "  first element from original array: " << array[0] << "\n";
+    std::cout << "  passing by value an array to a function that modifies it... \n";
 
     modify_first_element(array);
     
-    cout << "    first element of the original array: " << array[0] << endl;
-    cout << "  as we can see, even passing an array by value, the original array is modified." << endl;
+    std::cout << "    first element of the original array: " << array[0] << "\n";
+    std::cout << "  as we can see, even passing an array by value, the original array is modified.\n";
 }
 
 // Auxiliary method to arrays_and_reference_values function
 void modify_pointer_by_value(int *array) {
-    cout << "    Initiating function modify_pointer_by_value" << endl;
+    std::cout << "    Initiating function modify_pointer_by_value\n";
 
-    cout << "      modifying the recepted array pointer..." << endl;
+    std::cout << "      modifying the recepted array pointer...\n";
     array = new int[2];
-    cout << "        the recepted pointer now points to a new array memory region! ";
-    cout << "Address new memory: " << array << endl;
+    std::cout << "        the recepted pointer now points to a new array memory region! ";
+    std::cout << "Address new memory: " << array << "\n";
 
-    cout << "        modifying the values in this new array region..." << endl;
+    std::cout << "        modifying the values in this new array region...\n";
     array[0] = 8;
     array[1] = 9;
-    cout << "          now this new array has new values. " << endl;
-    cout << "            value 1: " << array[0] << endl;
-    cout << "            value 2: " << array[1] << endl;
+    std::cout << "          now this new array has new values. \n";
+    std::cout << "            value 1: " << array[0] << "\n";
+    std::cout << "            value 2: " << array[1] << "\n";
 
-    cout << "    End of function 'modify_pointer_by_value'" << endl;
+    std::cout << "    End of function 'modify_pointer_by_value'\n";
 }
 
 void arrays_and_reference_values() {
-    cout << "\nAlthough an array variable are a pointer to a memory, when it is passed " << endl;
-    cout << "to a function, it is passed by value." << endl;
+    std::cout << "\nAlthough an array variable are a pointer to a memory, when it is passed \n";
+    std::cout << "to a function, it is passed by value.\n";
 
-    cout << "  Initiating an array..." << endl;
+    std::cout << "  Initiating an array...\n";
     int array[] = {1, 2};
-    cout << "  Array initializing. This array variable points to this memory region: " << endl;
-    cout << "    " << array << endl;
+    std::cout << "  Array initializing. This array variable points to this memory region: \n";
+    std::cout << "    " << array << "\n";
 
-    cout << "  Passing array by value to a function.." << endl;
+    std::cout << "  Passing array by value to a function..\n";
     modify_pointer_by_value(array);
 
-    cout << "  After 'modify_pointer_by_value' function, the passed pointer to the array memory" << endl;
-    cout << "  points to this memory region: " << endl;
-    cout << "    " << array << endl;
-    cout << "  and has this values: " << endl;
-    cout << "    value 1: " << array[0] << endl;
-    cout << "    value 2: " << array[1] << endl;
+    std::cout << "  After 'modify_pointer_by_value' function, the passed pointer to the array memory\n";
+    std::cout << "  points to this memory region: \n";
+    std::cout << "    " << array << "\n";
+    std::cout << "  and has this values: \n";
+    std::cout << "    value 1: " << array[0] << "\n";
+    std::cout << "    value 2: " << array[1] << "\n";
 
-    cout << "As we can see, the function receives array by value, thus the original memory remains intact!";
-    cout << endl;
+    std::cout << "As we can see, the function receives array by value, thus the original memory remains intact!";
+    std::cout << "\n";
 }
 
 int main() {

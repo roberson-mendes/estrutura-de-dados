@@ -1,13 +1,12 @@
 #include <iostream>
 #include "time.h"
-using namespace std;
 
 Time::Time(int s, int m, int h) : second(s), minute(m), hour(h) {
 
 }
 
 void Time::print() const {
-    cout << hour << ":" << minute << ":" << second << endl;
+    std::cout << hour << ":" << minute << ":" << second << std::endl;
 }
 
 void Time::nextSecond() {
