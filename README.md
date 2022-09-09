@@ -14,5 +14,8 @@ This repository has c++ scripts based on data structure studies.
 - Just compile and execute the script you want to put to work and execute the generated compiled file.
 - For exemple, to compile the `week_2/class_1` program, go to week_2/class_1 and run the following command:
 ```
-g++ *.cpp -o ../../bin/class_1 | ../../bin/class_1
+g++ *.cpp -o  -std=c++17 ../../bin/class_1 | ../../bin/class_1
 ```
+
+# Code conventions
+All code conventions of this repository is based on the [Gromacs manual](https://manual.gromacs.org/5.1.1/dev-manual/naming.html) and on the [GeeksForGeeks article](https://www.geeksforgeeks.org/naming-convention-in-c/).
