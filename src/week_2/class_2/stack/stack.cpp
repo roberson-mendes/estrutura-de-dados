@@ -1,11 +1,15 @@
 #include "stack.h"
+#include <iostream>
 
-Stack::Stack(ItemType *structure) {
+Stack::Stack(ItemType structure[], int structureSize) {
+    for (int i = 0; i < structureSize; i++) {
+        structure[i] = (char) NULL;
+    }
+
     this->structure = structure;
 }
 
 Stack::~Stack() {
-    delete [] this->structure;
 }
 
 void Stack::push(ItemType item) {

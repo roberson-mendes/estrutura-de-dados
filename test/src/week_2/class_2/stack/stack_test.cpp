@@ -1,14 +1,29 @@
 #include "../../../../resources/test_base.h"
 #include "../../../../../src/week_2/class_2/stack/stack.cpp"
+#include <iostream>
+#include <cstddef>
+
+bool isStackEmpty(ItemType *structure) {
+    bool isEmpty = true;
+    char empty = (char) NULL;
+
+    for (int i = 0; i < 10; i++) {
+        if (structure[i] != empty)
+            isEmpty = false;
+    }
+
+    return isEmpty;
+}
 
 SCENARIO("Initializing a Stack structure") {
     GIVEN("an attempt to initialize a Stack") {
-        ItemType *structure = new ItemType[10];
-        Stack stack(structure);
-        WHEN("everything is right") {
-            THEN("should initialize a empty stack") {
-                CHECK(isStackEmpty(stack) == true);
-                //TODO
+        int structureSize = 10;
+        ItemType structure[structureSize];
+        Stack stack(structure, structureSize);
+
+        WHEN("the stack was initialized") {
+            THEN("should initialize an empty stack") {
+                CHECK(isStackEmpty(structure) == true);
             }
         }
     }
@@ -30,9 +45,6 @@ SCENARIO("Stack is empty") {
 
         WHEN("it tries to pop a element") {
             THEN("it does nothing with the stack") {
-                // ItemType *initial_structure = copy_structure(structure);
-                // CHECK(initial_structure == final_structure);
-                //TODO
             }
 
             AND_THEN("it must raise an error") {
@@ -104,8 +116,4 @@ SCENARIO("Stack is fullfilled") {
             }
         }
     }
-}
-
-bool isStackEmpty(ItemType *structure) {
-
 }
