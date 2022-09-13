@@ -14,9 +14,24 @@ Stack::~Stack() {
 }
 
 void Stack::push(ItemType item) {
-    this->structure[0] = item;
+    this->structure[this->length] = item;
+    this->length++;
 }
 
 ItemType Stack::pop() {
-    throw std::runtime_error("Stack is empty, so you can't pop a value!");
+    if(length == 0)
+        throw std::runtime_error("Stack is empty, so you can't pop a value!");
+    else {
+        int stackTop = length-1;
+
+        ItemType poppedItem = this->structure[stackTop];
+        
+        this->structure[stackTop] = (char) NULL;
+
+        this->length--;
+
+        return poppedItem;
+    }
+        
+
 }

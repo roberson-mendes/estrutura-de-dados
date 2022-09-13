@@ -63,27 +63,45 @@ SCENARIO("Stack is empty") {
 
 SCENARIO("Stack has at least 1 element") {
     GIVEN("a stack with 1 element") {
+        int structureSize = 10;
+        ItemType structure[structureSize];
+        Stack stack(structure, structureSize);
+        stack.push('a');
+        
         WHEN("it is tried to allocate a new item") {
             THEN("it should allocate this new item successfully") {
-                
+                stack.push('b');
+                CHECK(structure[1] == 'b');
             }
 
-            AND_THEN("this new item should be allocated at the top") {
-
+            AND_THEN("this new item should be allocated at the top of the stack") {
+                stack.push('b');
+                CHECK(structure[0] == 'a');
+                CHECK(structure[1] == 'b');
+                CHECK(structure[2] == (ItemType) NULL);
             }
         }
     
-        AND_WHEN("it is tried to pop an element") {
-            THEN("it should pop this element from the stack") {
-
+        AND_WHEN("it is tried to pop an item") {
+            ItemType poppedItem = stack.pop();
+            
+            THEN("it should return the popped item from the stack") {
+                CHECK(poppedItem == 'a');
             }
 
-            AND_THEN("should keep the penultimate element in the same position") {
-
+            AND_THEN("should put a null in place of the popped value") {
+                CHECK(structure[0] == (char) NULL);
             }
 
-            AND_THEN("should put a null as the value of the previous last position") {
+            AND_WHEN("it is tried to push a new item") {
+                ItemType newItem = 'c';
+                stack.push(newItem);
 
+                THEN("it should put this item in the bottom of the stack") {
+                    int bottom = 0;
+
+                    CHECK(structure[bottom] == newItem);
+                }
             }
         }
     }
