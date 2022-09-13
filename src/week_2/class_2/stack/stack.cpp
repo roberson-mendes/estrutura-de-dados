@@ -8,14 +8,17 @@ Stack::Stack(ItemType structure[], int structureSize) {
     }
 
     this->structure = structure;
+    this->mStructureSize = structureSize;
 }
 
 Stack::~Stack() {
 }
 
 void Stack::push(ItemType item) {
-    this->structure[this->length] = item;
-    this->length++;
+    if(!isFull()) {
+        this->structure[this->length] = item;
+        this->length++;
+    }
 }
 
 ItemType Stack::pop() {
@@ -32,6 +35,12 @@ ItemType Stack::pop() {
 
         return poppedItem;
     }
+}
         
+bool Stack::isEmpty() const {
+    return this->length == 0;
+}
 
+bool Stack::isFull() const {
+    return this->length == this->mStructureSize;
 }
