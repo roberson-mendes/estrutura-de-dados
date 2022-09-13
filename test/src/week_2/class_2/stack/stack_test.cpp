@@ -107,23 +107,48 @@ SCENARIO("Stack has at least 1 element") {
     }
 
     GIVEN("a stack with 2 elements") {
-        WHEN("it is tried to allocate a new item") {
-            THEN("it should allocate this new item") {
+        int structureSize = 10;
 
+        ItemType structure[structureSize];
+
+        Stack stack(structure, structureSize);
+
+        ItemType firstItem = 'a';
+        ItemType secondItem = 'b';
+
+        stack.push(firstItem);
+        stack.push(secondItem);
+
+        WHEN("it is tried to allocate a new item") {
+            ItemType thirdItem = 'c';
+
+            stack.push(thirdItem);
+            
+            THEN("it should allocate this new item") {
+                CHECK(structure[2] == 'c');
             }
 
-            AND_THEN("this new item should be allocated at the top") {
+            AND_THEN("should allocate the new item at the top") {
+                int top = 2;
 
+                CHECK(structure[1] == 'b');
+                CHECK(structure[top] == 'c');
+                CHECK(structure[3] == (char) NULL);
             }
         }
         
         AND_WHEN("it is tried to pop an element") {
-            THEN("it should pop this element from the stack") {
+            int lastTopItem = secondItem;
 
+            ItemType poppedItem = stack.pop();
+            
+            THEN("it should return the popped item from the stack") {
+                CHECK(poppedItem == lastTopItem);
             }
 
-            AND_THEN("the element of the top should be the previous one") {
-
+            AND_THEN("the element of the top should be the right before") {
+                CHECK(structure[0] == firstItem);
+                CHECK(structure[1] == (char) NULL);
             }
         }
     }
