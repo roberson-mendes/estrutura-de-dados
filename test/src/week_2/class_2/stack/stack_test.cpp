@@ -58,6 +58,14 @@ SCENARIO("Stack is empty") {
                 CHECK_THROWS_AS(stack.pop(), std::exception);
             }
         }
+
+        WHEN("is called isEmpty() method")
+        {
+            THEN("it should return true")
+            {
+                CHECK(stack.isEmpty() == true);
+            }
+        }
     }
 }
 
@@ -155,14 +163,33 @@ SCENARIO("Stack has at least 1 element") {
 }
 
 SCENARIO("Stack is fullfilled") {
-    GIVEN("Stack is fullfilled") {
-        WHEN("someone tries to allocate a new item") {
-            THEN("it shouldn't allocate a new item") {
+    GIVEN("fullfilled stack") {
+        int structureSize = 2;
 
+        ItemType structure[structureSize];
+
+        Stack stack(structure, structureSize);
+
+        ItemType firstItem = 'a';
+        ItemType secondItem = 'b';
+
+        stack.push(firstItem);
+        stack.push(secondItem);
+
+        WHEN("isFull is called") {
+            THEN("it should be true") {
+                CHECK(stack.isFull() == true);
             }
+        }
 
-            AND_THEN("it should throw an error") {
+        WHEN("it is tried to allocate a new item") {
+            ItemType thirdItem = 'c';
+            int topOfStack = 1;
 
+            stack.push(thirdItem);
+
+            THEN("it shouldn't allocate the new item") {
+                CHECK(structure[topOfStack] == secondItem);
             }
         }
     }

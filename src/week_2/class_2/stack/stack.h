@@ -14,5 +14,6 @@ class Stack {
         ItemType pop();
     private:
         int length;
+        int mStructureSize;
         ItemType* structure;
 };
