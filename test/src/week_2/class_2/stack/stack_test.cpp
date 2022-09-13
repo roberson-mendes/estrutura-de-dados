@@ -1,6 +1,7 @@
+#include <stdexcept>
 #include "../../../../resources/test_base.h"
 #include "../../../../../src/week_2/class_2/stack/stack.cpp"
-#include <iostream>
+#include <stdexcept>
 #include <cstddef>
 
 bool isStackEmpty(ItemType *structure) {
@@ -38,17 +39,23 @@ SCENARIO("Stack is empty") {
             ItemType item = 'a';
             stack.push(item);
 
-            THEN("it should allocate the new element") {
+            THEN("it should allocate the new element successfully") {
                 CHECK(structure[0] == item);
             }   
         }
 
-        WHEN("it tries to pop a element") {
+        WHEN("it tries to pop out an element") {
             THEN("it does nothing with the stack") {
+                try {
+                    stack.pop();
+                }
+                catch(std::exception e) {
+                    CHECK(structure[0] == (char) NULL);
+                }
             }
 
-            AND_THEN("it must raise an error") {
-
+            AND_THEN("it should throw an exception") {
+                CHECK_THROWS_AS(stack.pop(), std::exception);
             }
         }
     }
@@ -57,8 +64,8 @@ SCENARIO("Stack is empty") {
 SCENARIO("Stack has at least 1 element") {
     GIVEN("a stack with 1 element") {
         WHEN("it is tried to allocate a new item") {
-            THEN("it should allocate this new item") {
-
+            THEN("it should allocate this new item successfully") {
+                
             }
 
             AND_THEN("this new item should be allocated at the top") {
@@ -71,11 +78,11 @@ SCENARIO("Stack has at least 1 element") {
 
             }
 
-            AND_THEN("the element of the top should be the same position") {
+            AND_THEN("should keep the penultimate element in the same position") {
 
             }
 
-            AND_THEN("the element of the top should have a null as the value") {
+            AND_THEN("should put a null as the value of the previous last position") {
 
             }
         }
