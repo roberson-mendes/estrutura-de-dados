@@ -1,4 +1,4 @@
-#include "item_type.h"
+#include "../../item_type.h"
 
 const int MAX_ITEMS = 100;
 
