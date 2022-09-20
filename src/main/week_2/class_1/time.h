@@ -11,13 +11,13 @@ class Time {
         void print() const;
         void nextSecond();
         //Getters
-            int getSecond() const;
-            int getMinute() const;
-            int getHour() const;
+        int getSecond() const;
+        int getMinute() const;
+        int getHour() const;
         //Setters
-            void setSecond(int second);
-            void setMinute(int minute);
-            void setHour(int hour);
+        void setSecond(int second);
+        void setMinute(int minute);
+        void setHour(int hour);
 };
 
 #endif
