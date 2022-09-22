@@ -1,5 +1,5 @@
-#include "../../../../resources/test_base.h"
-#include "../../../../../src/week_2/class_3/queue/queue.cpp"
+#include "../../../resources/test_base.h"
+#include "../../../../main/week_2/class_3/queue/queue.cpp"
 
 SCENARIO("initializing a queue structure") {
     GIVEN("a initialized queue") {
