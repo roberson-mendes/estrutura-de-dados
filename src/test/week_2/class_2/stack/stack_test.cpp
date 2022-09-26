@@ -1,6 +1,6 @@
 #include <stdexcept>
 #include "../../../resources/test_base.h"
-#include "../../../../main/week_2/class_2/stack/stack.cpp"
+#include "../../../../main/week_2/class_2/vector_stack/vector_stack.cpp"
 #include <cstddef>
 
 bool isStackEmpty(ItemType *structure) {
@@ -19,7 +19,7 @@ SCENARIO("Initializing a Stack structure") {
     GIVEN("an attempt to initialize a Stack") {
         int structureSize = 10;
         ItemType structure[structureSize];
-        Stack stack(structure, structureSize);
+        VectorStack stack(structure, structureSize);
 
         WHEN("the stack was initialized") {
             THEN("should initialize an empty stack") {
@@ -32,7 +32,7 @@ SCENARIO("Initializing a Stack structure") {
 SCENARIO("Stack is empty") {
     GIVEN("a empty stack") {
         ItemType *structure = new ItemType[100];
-        Stack stack(structure);
+        VectorStack stack(structure);
         
         WHEN("it is tried to allocate a new element") {
             ItemType item = 'a';
@@ -72,7 +72,7 @@ SCENARIO("Stack has at least 1 element") {
     GIVEN("a stack with 1 element") {
         int structureSize = 10;
         ItemType structure[structureSize];
-        Stack stack(structure, structureSize);
+        VectorStack stack(structure, structureSize);
         stack.push('a');
         
         WHEN("it is tried to allocate a new item") {
@@ -118,7 +118,7 @@ SCENARIO("Stack has at least 1 element") {
 
         ItemType structure[structureSize];
 
-        Stack stack(structure, structureSize);
+        VectorStack stack(structure, structureSize);
 
         ItemType firstItem = 'a';
         ItemType secondItem = 'b';
@@ -167,7 +167,7 @@ SCENARIO("Stack is fullfilled") {
 
         ItemType structure[structureSize];
 
-        Stack stack(structure, structureSize);
+        VectorStack stack(structure, structureSize);
 
         ItemType firstItem = 'a';
         ItemType secondItem = 'b';
