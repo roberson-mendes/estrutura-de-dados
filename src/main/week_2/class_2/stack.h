@@ -1,3 +1,6 @@
+#ifndef STACK_H
+#define STACK_H
+
 class Stack {
     public:
         virtual bool isEmpty() const = 0;
@@ -5,3 +8,5 @@ class Stack {
         virtual void push(ItemType) = 0;
         virtual ItemType pop() = 0;
 };
+
+#endif

@@ -1,7 +1,7 @@
 #include <stdexcept>
+#include <cstddef> //to use NULL type
 #include "../../../resources/test_base.h"
 #include "../../../../main/week_2/class_2/vector_stack/vector_stack.cpp"
-#include <cstddef>
 
 bool isStackEmpty(ItemType *structure) {
     bool isEmpty = true;
