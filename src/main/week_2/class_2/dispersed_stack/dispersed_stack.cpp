@@ -15,6 +15,13 @@ bool DispersedStack::isEmpty() const {
 
 bool DispersedStack::isFull() const { return true; }
 
-void DispersedStack::push(ItemType) {}
+void DispersedStack::push(ItemType item) {
+    if(this->isEmpty()) {        
+        Node* node = new Node();
+        node->item = item;
+        node->next = NULL;
+        this->structure = node;
+    }
+}
 
 ItemType DispersedStack::pop() { return 'a'; }

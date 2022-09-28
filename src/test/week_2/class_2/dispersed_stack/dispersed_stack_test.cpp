@@ -16,13 +16,19 @@ SCENARIO("Initializing a DispersedStack structure") {
 
 SCENARIO("Stack is empty") {
     GIVEN("a empty stack") {        
-        WHEN("it is tried to allocate a new element") {
+        DispersedStack stack;
 
-            THEN("it should allocate the new element successfully") {
+        WHEN("it is tried to allocate a new item") {
+            //alocates new item
+            ItemType newItem = 'a';
+            stack.push(newItem);
+
+            THEN("it should allocate the new item successfully") {
+                CHECK(stack.isEmpty() == false);
             }   
         }
 
-        WHEN("it tries to pop out an element") {
+        WHEN("it tries to pop out an item") {
             THEN("it does nothing with the stack") {
             }
 
@@ -39,8 +45,8 @@ SCENARIO("Stack is empty") {
     }
 }
 
-SCENARIO("Stack has at least 1 element") {
-    GIVEN("a stack with 1 element") {        
+SCENARIO("Stack has at least 1 item") {
+    GIVEN("a stack with 1 item") {        
         WHEN("it is tried to allocate a new item") {
             THEN("it should allocate this new item successfully") {
             }
@@ -64,7 +70,7 @@ SCENARIO("Stack has at least 1 element") {
         }
     }
 
-    GIVEN("a stack with 2 elements") {
+    GIVEN("a stack with 2 items") {
         WHEN("it is tried to allocate a new item") {
             THEN("it should allocate this new item") {
             }
@@ -73,12 +79,12 @@ SCENARIO("Stack has at least 1 element") {
             }
         }
         
-        AND_WHEN("it is tried to pop an element") {
+        AND_WHEN("it is tried to pop an item") {
             
             THEN("it should return the popped item from the stack") {
             }
 
-            AND_THEN("the element of the top should be the right before") {
+            AND_THEN("the item of the top should be the right before") {
             }
         }
     }
