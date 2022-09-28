@@ -1,3 +1,4 @@
+#include <stdexcept> //to use std::exception
 #include <cstddef> //to use NULL type
 #include "../../../resources/test_base.h"
 #include "../../../../main/week_2/class_2/dispersed_stack/dispersed_stack.cpp"
@@ -30,9 +31,16 @@ SCENARIO("Stack is empty") {
 
         WHEN("it tries to pop out an item") {
             THEN("it does nothing with the stack") {
+                try {
+                    stack.pop();
+                }
+                catch(std::exception e) {
+                    CHECK(stack.isEmpty() == true);
+                }
             }
 
             AND_THEN("it should throw an exception") {
+                CHECK_THROWS_AS(stack.pop(), std::exception);
             }
         }
 

@@ -24,4 +24,9 @@ void DispersedStack::push(ItemType item) {
     }
 }
 
-ItemType DispersedStack::pop() { return 'a'; }
+ItemType DispersedStack::pop() {
+    if(this->isEmpty()) {
+        throw std::runtime_error("Stack is empty, so you can't pop a value!");
+    }
+    return 'a';
+}
