@@ -4,9 +4,11 @@
 
 SCENARIO("Initializing a DispersedStack structure") {
     GIVEN("an attempt to initialize a DispersedStack") {
-        WHEN("the stack was initialized") {
-            THEN("should initialize an empty stack") {
-                CHECK(node == empty)
+        DispersedStack stack;
+        
+        WHEN("verify if stack is empty") {
+            THEN("should return true") {
+                CHECK(stack.isEmpty() == true);
             }
         }
     }

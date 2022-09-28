@@ -1,3 +1,4 @@
+#include "../item_type.h"
 #ifndef STACK_H
 #define STACK_H
 
