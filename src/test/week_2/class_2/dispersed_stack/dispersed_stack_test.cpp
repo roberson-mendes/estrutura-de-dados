@@ -46,8 +46,11 @@ SCENARIO("Stack is empty") {
 
         WHEN("is called isEmpty() method")
         {
+            bool isEmpty = stack.isEmpty();
+
             THEN("it should return true")
             {
+                CHECK(isEmpty == true);
             }
         }
     }
